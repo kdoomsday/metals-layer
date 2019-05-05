@@ -1,0 +1,58 @@
+#+TITLE: metals layer
+
+# The maximum height of the logo should be 200 pixels.
+[[img/metals.png]]
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+  - [[#features][Features:]]
+- [[#install][Install]]
+  - [[#metals-binary][Metals Binary]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer adds support for Scala Metals.
+
+Configuration instructions come from [[https://scalameta.org/metals/docs/editors/emacs.html][here]].
+
+** Features:
+  - Autocomplete
+  - Go to definition
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =metals= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+You probably do not want to use the scala layer together woth this one as they
+provide similar functionality, although I have not tested it.
+
+** Metals Binary
+   You require a metals binary in order for the layer to work. You can gete it
+   by running the following:
+   
+#+BEGIN_SRC bash
+curl -L -o coursier https://git.io/coursier
+chmod +x coursier
+./coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=emacs \
+  org.scalameta:metals_2.12:0.5.1 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o /usr/local/bin/metals-emacs -f
+#+END_SRC
+
+* Key bindings
+
+| Key Binding | Description    |
+|-------------+----------------|
+| ~SPC x x x~ | Does thing01   |
+
+# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
+# Examples:
+# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
+# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
+# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
