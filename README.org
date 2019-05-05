@@ -9,7 +9,6 @@
   - [[#features][Features:]]
 - [[#install][Install]]
   - [[#metals-binary][Metals Binary]]
-- [[#key-bindings][Key bindings]]
 
 * Description
 This layer adds support for Scala Metals.
@@ -19,6 +18,8 @@ Configuration instructions come from [[https://scalameta.org/metals/docs/editors
 ** Features:
   - Autocomplete
   - Go to definition
+  - Dynamically show errors
+  - Dynamically show docs
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
@@ -45,14 +46,3 @@ chmod +x coursier
   -o /usr/local/bin/metals-emacs -f
 #+END_SRC
 
-* Key bindings
-
-| Key Binding | Description    |
-|-------------+----------------|
-| ~SPC x x x~ | Does thing01   |
-
-# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
-# Examples:
-# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
-# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
-# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
