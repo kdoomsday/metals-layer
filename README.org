@@ -9,6 +9,7 @@
   - [[#features][Features:]]
 - [[#install][Install]]
   - [[#metals-binary][Metals Binary]]
+- [[#key-bindings][Key bindings]]
 
 * Description
 This layer adds support for Scala Metals.
@@ -45,4 +46,10 @@ chmod +x coursier
   -r sonatype:snapshots \
   -o /usr/local/bin/metals-emacs -f
 #+END_SRC
+
+* Key bindings
+| Key binding | Description    |
+|-------------+----------------|
+| ~,en~       | Next error     |
+| ~,ep~       | Previous error |
 
