@@ -68,12 +68,14 @@ Each entry is either:
 
 
 (defun metals/init-scala-mode ()
+  "Enable scala and sbt modes."
   (use-package scala-mode
     :mode "\\.s\\(cala\\|bt\\)$")
   )
 
 
 (defun metals/init-sbt-mode ()
+  "Sbt-mode configurations."
   (use-package sbt-mode
     :commands sbt-start sbt-command
     :config
@@ -85,22 +87,29 @@ Each entry is either:
      minibuffer-local-completion-map))
   )
 
-;; (defun metals/init-flycheck ()
-;;   (use-package flycheck
-;;     :init (global-flycheck-mode)))
+(defun metals/init-flycheck ()
+  "Initialize flycheck."
+  (use-package flycheck
+    :init (global-flycheck-mode)))
 
-(defun metals/init-lsp-mode ()
-  (use-package lsp-mode
-    :init (setq lsp-prefer-flymake nil))
-  )
+;; (defun metals/init-lsp-mode ()
+;;   "Initialize LSP mode."
+;;   (use-package lsp-mode
+;;     :hook (scala-mode . lsp)
+;;     ;; :init (setq lsp-prefer-flymake nil))
+;;     :config (setq lsp-prefer-flymake nil))
+;;   )
 
 (defun metals/init-lsp-ui ()
+  "Initialize and use LSP-UI."
   (use-package lsp-ui))
 
 (defun metals/init-company-lsp ()
+  "Initialize and use company-lsp."
   (use-package company-lsp))
 
 (defun metals/init-lsp-scala ()
+  "Initialize and use lsp-scala. Not sure why it's necessary after lsp-mode above."
   (use-package lsp-scala
     :after scala-mode
     :demand t
