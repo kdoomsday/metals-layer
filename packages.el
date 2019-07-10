@@ -84,7 +84,12 @@ Each entry is either:
     (substitute-key-definition
      'minibuffer-complete-word
      'self-insert-command
-     minibuffer-local-completion-map))
+     minibuffer-local-completion-map)
+    :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
+            "en" 'flymake-goto-next-error
+            "ep" 'flymake-goto-prev-error))
+  ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
+  ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
   )
 
 (defun metals/init-flycheck ()
