@@ -86,8 +86,9 @@ Each entry is either:
      'self-insert-command
      minibuffer-local-completion-map)
     :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
-            "en" 'flymake-goto-next-error
-            "ep" 'flymake-goto-prev-error))
+            "en" 'flycheck-next-error
+            "ep" 'flycheck-previous-error
+            "el" 'lsp-ui-flycheck-list))
   ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
   ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
   )
@@ -97,13 +98,13 @@ Each entry is either:
   (use-package flycheck
     :init (global-flycheck-mode)))
 
-;; (defun metals/init-lsp-mode ()
-;;   "Initialize LSP mode."
-;;   (use-package lsp-mode
-;;     :hook (scala-mode . lsp)
-;;     ;; :init (setq lsp-prefer-flymake nil))
-;;     :config (setq lsp-prefer-flymake nil))
-;;   )
+(defun metals/init-lsp-mode ()
+  "Initialize LSP mode."
+  (use-package lsp-mode
+    :hook (scala-mode . lsp)
+    ;; :init (setq lsp-prefer-flymake nil))
+    :config (setq lsp-prefer-flymake nil))
+  )
 
 (defun metals/init-lsp-ui ()
   "Initialize and use LSP-UI."
@@ -113,11 +114,11 @@ Each entry is either:
   "Initialize and use company-lsp."
   (use-package company-lsp))
 
-(defun metals/init-lsp-scala ()
-  "Initialize and use lsp-scala. Not sure why it's necessary after lsp-mode above."
-  (use-package lsp-scala
-    :after scala-mode
-    :demand t
-    ;; Optional - enable lsp-scala automatically in scala files
-    :hook (scala-mode . lsp)) )
+;; (defun metals/init-lsp-scala ()
+;;   "Initialize and use lsp-scala. Not sure why it's necessary after lsp-mode above."
+;;   (use-package lsp-scala
+;;     :after scala-mode
+;;     :demand t
+;;     ;; Optional - enable lsp-scala automatically in scala files
+;;     :hook (scala-mode . lsp)) )
 ;;; packages.el ends here
