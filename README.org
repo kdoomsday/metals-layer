@@ -50,6 +50,6 @@ chmod +x coursier
 * Key bindings
 | Key binding | Description    |
 |-------------+----------------|
-| ~,en~       | Next error     |
-| ~,ep~       | Previous error |
+| , e n       | Next error     |
+| , e p       | Previous error |
 
