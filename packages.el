@@ -102,7 +102,6 @@ Each entry is either:
   "Initialize LSP mode."
   (use-package lsp-mode
     :hook (scala-mode . lsp)
-    ;; :init (setq lsp-prefer-flymake nil))
     :config (setq lsp-prefer-flymake nil))
   )
 
@@ -113,12 +112,3 @@ Each entry is either:
 (defun metals/init-company-lsp ()
   "Initialize and use company-lsp."
   (use-package company-lsp))
-
-;; (defun metals/init-lsp-scala ()
-;;   "Initialize and use lsp-scala. Not sure why it's necessary after lsp-mode above."
-;;   (use-package lsp-scala
-;;     :after scala-mode
-;;     :demand t
-;;     ;; Optional - enable lsp-scala automatically in scala files
-;;     :hook (scala-mode . lsp)) )
-;;; packages.el ends here
