@@ -52,4 +52,5 @@ chmod +x coursier
 |-------------+----------------|
 | , e n       | Next error     |
 | , e p       | Previous error |
+| , e l       | Error list     |
 
