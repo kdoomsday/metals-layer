@@ -37,7 +37,6 @@
     lsp-mode
     lsp-ui
     company-lsp
-    lsp-scala
     )
   "The list of Lisp packages required by the metals layer.
 
@@ -112,3 +111,5 @@ Each entry is either:
 (defun metals/init-company-lsp ()
   "Initialize and use company-lsp."
   (use-package company-lsp))
+
+;;; packages.el ends here
