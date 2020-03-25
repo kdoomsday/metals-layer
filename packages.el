@@ -33,10 +33,11 @@
   '(
     scala-mode
     sbt-mode
-    flycheck
+    ;; flycheck
     lsp-mode
     lsp-ui
     company-lsp
+    lsp-treemacs
     )
   "The list of Lisp packages required by the metals layer.
 
@@ -88,20 +89,23 @@ Each entry is either:
             "en" 'flycheck-next-error
             "ep" 'flycheck-previous-error
             "el" 'lsp-ui-flycheck-list))
+  (setq sbt:program-options '("-Dsbt.supershell=false"))
   ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
   ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
   )
 
-(defun metals/init-flycheck ()
-  "Initialize flycheck."
-  (use-package flycheck
-    :init (global-flycheck-mode)))
+;; (defun metals/init-flycheck ()
+;;   "Initialize flycheck."
+;;   (use-package flycheck
+;;     :init (global-flycheck-mode)))
 
 (defun metals/init-lsp-mode ()
   "Initialize LSP mode."
   (use-package lsp-mode
-    :hook (scala-mode . lsp)
-    :config (setq lsp-prefer-flymake nil))
+      ;; Optional - enable lsp-mode automatically in scala files
+      :hook  (scala-mode . lsp)
+      (lsp-mode . lsp-lens-mode)
+      :config (setq lsp-prefer-flymake nil))
   )
 
 (defun metals/init-lsp-ui ()
@@ -111,5 +115,13 @@ Each entry is either:
 (defun metals/init-company-lsp ()
   "Initialize and use company-lsp."
   (use-package company-lsp))
+
+(defun metals/init-lsp-treemacs ()
+  "Initialize and use lsp-treemacs."
+  (use-package lsp-treemacs
+    :config
+    (lsp-metals-treeview-enable t)
+    (setq lsp-metals-treeview-show-when-views-received t)
+    ))
 
 ;;; packages.el ends here
