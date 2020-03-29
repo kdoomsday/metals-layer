@@ -50,10 +50,11 @@ chmod +x coursier
 * Key bindings
 | Key binding | Description         | Function                     |
 |-------------+---------------------+------------------------------|
+| , /         | Fuzzy search symbol | lsp-ui-find-workspace-symbol |
 | , e n       | Next error          | flycheck-next-error          |
 | , e p       | Previous error      | flycheck-previous-error      |
 | , e l       | Error list          | lsp-ui-flycheck-list         |
-| , /         | Fuzzy search symbol | lsp-ui-find-workspace-symbol |
+| , f r       | Find references     | lsp-treemacs-references      |
 | , o         | Symbols (Outline)   | lsp-treemacs-symbols         |
-| , r         | Find references     | lsp-treemacs-references      |
+| , r         | Rename symbol       | lsp-rename                   |
 

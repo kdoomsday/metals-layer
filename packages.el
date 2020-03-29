@@ -91,7 +91,8 @@ Each entry is either:
             "el" 'lsp-ui-flycheck-list
             "/"  'lsp-ui-find-workspace-symbol
             "o"  'lsp-treemacs-symbols
-            "r"  'lsp-treemacs-references))
+            "r"  'lsp-rename
+            "fr"  'lsp-treemacs-references) )
   (setq sbt:program-options '("-Dsbt.supershell=false"))
   ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
   ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
