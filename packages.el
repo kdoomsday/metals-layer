@@ -89,6 +89,7 @@ Each entry is either:
             "en" 'flycheck-next-error
             "ep" 'flycheck-previous-error
             "el" 'lsp-ui-flycheck-list
+            "/"  'lsp-ui-find-workspace-symbol
             "o"  'lsp-treemacs-symbols
             "r"  'lsp-treemacs-references))
   (setq sbt:program-options '("-Dsbt.supershell=false"))

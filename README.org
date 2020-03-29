@@ -48,11 +48,12 @@ chmod +x coursier
 #+END_SRC
 
 * Key bindings
-| Key binding | Description       | Function                |
-|-------------+-------------------+-------------------------|
-| , e n       | Next error        | flycheck-next-error     |
-| , e p       | Previous error    | flycheck-previous-error |
-| , e l       | Error list        | lsp-ui-flycheck-list    |
-| , o         | Symbols (Outline) | lsp-treemacs-symbols    |
-| , r         | Find references   | lsp-treemacs-references |
+| Key binding | Description         | Function                     |
+|-------------+---------------------+------------------------------|
+| , e n       | Next error          | flycheck-next-error          |
+| , e p       | Previous error      | flycheck-previous-error      |
+| , e l       | Error list          | lsp-ui-flycheck-list         |
+| , /         | Fuzzy search symbol | lsp-ui-find-workspace-symbol |
+| , o         | Symbols (Outline)   | lsp-treemacs-symbols         |
+| , r         | Find references     | lsp-treemacs-references      |
 
