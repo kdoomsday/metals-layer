@@ -88,7 +88,9 @@ Each entry is either:
     :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
             "en" 'flycheck-next-error
             "ep" 'flycheck-previous-error
-            "el" 'lsp-ui-flycheck-list))
+            "el" 'lsp-ui-flycheck-list
+            "o"  'lsp-treemacs-symbols
+            "r"  'lsp-treemacs-references))
   (setq sbt:program-options '("-Dsbt.supershell=false"))
   ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
   ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
