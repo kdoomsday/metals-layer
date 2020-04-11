@@ -70,7 +70,17 @@ Each entry is either:
 (defun metals/init-scala-mode ()
   "Enable scala and sbt modes."
   (use-package scala-mode
-    :mode "\\.s\\(cala\\|bt\\)$")
+    :mode "\\.s\\(cala\\|bt\\)$"
+    :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
+            "en" 'flycheck-next-error
+            "ep" 'flycheck-previous-error
+            "ee" 'flycheck-explain-error-at-point
+            "ea" 'flycheck-list-errors
+            "el" 'lsp-ui-flycheck-list
+            "/"  'lsp-ui-find-workspace-symbol
+            "o"  'lsp-treemacs-symbols
+            "r"  'lsp-rename
+            "fr"  'lsp-treemacs-references))
   )
 
 
@@ -84,17 +94,7 @@ Each entry is either:
     (substitute-key-definition
      'minibuffer-complete-word
      'self-insert-command
-     minibuffer-local-completion-map)
-    :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
-            "en" 'flycheck-next-error
-            "ep" 'flycheck-previous-error
-            "ee" 'flycheck-explain-error-at-point
-            "ea" 'flycheck-list-errors
-            "el" 'lsp-ui-flycheck-list
-            "/"  'lsp-ui-find-workspace-symbol
-            "o"  'lsp-treemacs-symbols
-            "r"  'lsp-rename
-            "fr"  'lsp-treemacs-references) )
+     minibuffer-local-completion-map))
   (setq sbt:program-options '("-Dsbt.supershell=false"))
   ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
   ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
