@@ -88,6 +88,8 @@ Each entry is either:
     :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
             "en" 'flycheck-next-error
             "ep" 'flycheck-previous-error
+            "ee" 'flycheck-explain-error-at-point
+            "ea" 'flycheck-list-errors
             "el" 'lsp-ui-flycheck-list
             "/"  'lsp-ui-find-workspace-symbol
             "o"  'lsp-treemacs-symbols
