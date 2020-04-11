@@ -71,16 +71,20 @@ Each entry is either:
   "Enable scala and sbt modes."
   (use-package scala-mode
     :mode "\\.s\\(cala\\|bt\\)$"
-    :init (spacemacs/set-leader-keys-for-major-mode 'scala-mode
-            "en" 'flycheck-next-error
-            "ep" 'flycheck-previous-error
-            "ee" 'flycheck-explain-error-at-point
-            "ea" 'flycheck-list-errors
-            "el" 'lsp-ui-flycheck-list
-            "/"  'lsp-ui-find-workspace-symbol
-            "o"  'lsp-treemacs-symbols
-            "r"  'lsp-rename
-            "fr"  'lsp-treemacs-references))
+    :init
+    (progn
+      (spacemacs/set-leader-keys-for-major-mode 'scala-mode
+        "en" 'flycheck-next-error
+        "ep" 'flycheck-previous-error
+        "ee" 'flycheck-explain-error-at-point
+        "ea" 'flycheck-list-errors
+        "el" 'lsp-ui-flycheck-list
+        "/"  'lsp-ui-find-workspace-symbol
+        "o"  'lsp-treemacs-symbols
+        "r"  'lsp-rename
+        "fr"  'lsp-treemacs-references)
+      (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors"))
+    )
   )
 
 
@@ -96,7 +100,6 @@ Each entry is either:
      'self-insert-command
      minibuffer-local-completion-map))
   (setq sbt:program-options '("-Dsbt.supershell=false"))
-  ;; (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors")
   ;; (spacemacs/declare-prefix-for-mode 'sbt-mode "e" "errors")
   )
 
