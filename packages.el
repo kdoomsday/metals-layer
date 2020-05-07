@@ -82,7 +82,9 @@ Each entry is either:
         "/"  'lsp-ui-find-workspace-symbol
         "o"  'lsp-treemacs-symbols
         "r"  'lsp-rename
-        "fr"  'lsp-treemacs-references)
+        "fr" 'lsp-treemacs-references
+        "bc" 'lsp-metals-build-connect
+        "bi" 'lsp-metals-build-import)
       (spacemacs/declare-prefix-for-mode 'scala-mode "e" "errors"))
     )
   )
